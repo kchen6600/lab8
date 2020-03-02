@@ -107,7 +107,7 @@ module MakeInterval (Endpoint : ORDERED_TYPE) =
     | Empty -> false
     | Interval (low, high) ->
          Endpoint.compare x low >= 0
-         && Endpoint.compare x high <= 0
+        && Endpoint.compare x high <= 0
     (* intersect intvl1 intvl2 -- Returns the intersection of `intvl1` and `intvl2` *)
     let intersect (intvl1 : interval) (intvl2 : interval) : interval =
       let ordered x y = if Endpoint.compare x y <= 0 then x, y else y, x in
